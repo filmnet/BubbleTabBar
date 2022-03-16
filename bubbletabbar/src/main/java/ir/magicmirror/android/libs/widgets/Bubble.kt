@@ -102,9 +102,9 @@ class Bubble(context: Context, private var item: MenuItem) : FrameLayout(context
     override fun setSelected(selected: Boolean) {
         super.setSelected(selected)
         if (selected) {
-            title.expand(container, item.iconColor, item.cornerRadius)
+            title.expand(container, item.backgroundColor, item.cornerRadius)
         } else {
-            title.collapse(container, item.iconColor, item.cornerRadius)
+            title.collapse(container, item.backgroundColor, item.cornerRadius)
         }
     }
 

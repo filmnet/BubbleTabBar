@@ -39,6 +39,7 @@
             app:bubbletab_custom_font="@font/dana_regular"
             app:bubbletab_disabled_icon_color="@null"
             app:bubbletab_horizontal_padding="16dp"
+            app:bubbletab_background_color="#363636"
             app:bubbletab_icon_padding="8dp"
             app:bubbletab_menuResource="@menu/list"
             app:bubbletab_tab_corner_radius="8dp"

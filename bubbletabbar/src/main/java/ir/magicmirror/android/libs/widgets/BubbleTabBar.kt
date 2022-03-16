@@ -13,6 +13,7 @@ import ir.magicmirror.android.libs.widgets.parser.MenuParser
 
 class BubbleTabBar : LinearLayout {
     private var onBubbleClickListener: OnBubbleClickListener? = null
+    private var bubbleBackgroundColorParam: Int = Color.GRAY
     private var disabledIconColorParam: Int = Color.GRAY
     private var horizontalPaddingParam: Float = 0F
     private var iconPaddingParam: Float = 0F
@@ -93,6 +94,10 @@ class BubbleTabBar : LinearLayout {
                     R.styleable.BubbleTabBar_bubbletab_disabled_icon_color,
                     Color.GRAY
                 )
+                bubbleBackgroundColorParam = attributes.getColor(
+                    R.styleable.BubbleTabBar_bubbletab_background_color,
+                    Color.GRAY
+                )
                 customFontParam =
                     attributes.getResourceId(R.styleable.BubbleTabBar_bubbletab_custom_font, 0)
 
@@ -150,6 +155,7 @@ class BubbleTabBar : LinearLayout {
                 it.iconPadding = iconPaddingParam
                 it.customFont = customFontParam
                 it.disabledIconColor = disabledIconColorParam
+                it.backgroundColor = bubbleBackgroundColorParam
                 it.titleSize = titleSizeParam
                 it.cornerRadius = cornerRadiusParam
             }

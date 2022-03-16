@@ -56,7 +56,7 @@ var DURATION = 150L
 var ALPHA = 0.15f
 internal fun TextView.expand(container: LinearLayout, iconColor: Int, cornerRadius: Float) {
     val bounds = Rect()
-    container.setCustomBackground(iconColor, ALPHA, cornerRadius)
+    container.setCustomBackground(iconColor, cornerRadius)
     paint.apply {
         getTextBounds(text.toString(), 0, text.length, bounds)
         ValueAnimator.ofInt(0, bounds.width() + paddingStart + 10).apply {
@@ -114,6 +114,21 @@ internal fun LinearLayout.setCustomBackground(color: Int, alpha: Float, cornerRa
         DrawableCompat.setTint(
             DrawableCompat.wrap(this), Color.argb(
                 (Color.alpha(color) * alpha).toInt(),
+                Color.red(color),
+                Color.green(color),
+                Color.blue(color)
+            )
+        )
+    }
+    background = containerBackground
+}
+
+internal fun LinearLayout.setCustomBackground(color: Int, cornerRadius: Float) {
+    val containerBackground = GradientDrawable().apply {
+        this.cornerRadius = cornerRadius
+        DrawableCompat.setTint(
+            DrawableCompat.wrap(this), Color.argb(
+                (Color.alpha(color)),
                 Color.red(color),
                 Color.green(color),
                 Color.blue(color)
