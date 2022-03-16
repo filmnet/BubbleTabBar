@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f0f0"
+        android:layoutDirection="rtl"
+        tools:context="io.ak1.bubbletabbarapp.MainActivity"
+        tools:ignore="Overdraw">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/inner_host_nav"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@id/bubbleTabBar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/inner_nav_graph" />
+
+    <ir.magicmirror.android.libs.widgets.BubbleTabBar
+            android:id="@+id/bubbleTabBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#1c1c1c"
+            app:bubbletab_custom_font="@font/dana_regular"
+            app:bubbletab_disabled_icon_color="@null"
+            app:bubbletab_horizontal_padding="16dp"
+            app:bubbletab_icon_padding="8dp"
+            app:bubbletab_menuResource="@menu/list"
+            app:bubbletab_tab_corner_radius="8dp"
+            app:bubbletab_title_size="10dp"
+            app:bubbletab_vertical_padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/bubble_horizontal_padding"
+            android:gravity="center_horizontal"
+            android:text="@string/nc_integrations"
+            android:textColor="@color/background"
+            android:textSize="50sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

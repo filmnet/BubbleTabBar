@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/home"
+            android:checked="true"
+            android:color="@android:color/white"
+            android:icon="@drawable/ic_action_home"
+            android:title="خانه" />
+
+    <item
+            android:id="@+id/log"
+            android:color="@android:color/white"
+            android:icon="@drawable/ic_action_search"
+            android:title="جستجو" />
+    <item
+            android:id="@+id/doc"
+            android:color="@android:color/white"
+            android:icon="@drawable/ic_action_categories"
+            android:title="دسته‌بندی‌ها" />
+
+</menu>
